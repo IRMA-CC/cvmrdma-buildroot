@@ -4,12 +4,13 @@
 #
 ################################################################################
 
-RDMA_CORE_VERSION = 49.0
+RDMA_CORE_VERSION = 47.0
 RDMA_CORE_SITE = $(call github,linux-rdma,rdma-core,v$(RDMA_CORE_VERSION))
 RDMA_CORE_LICENSE = GPL-2.0 or BSD-2-Clause
 RDMA_CORE_LICENSE_FILES = COPYING.GPL2 COPYING.BSD_MIT COPYING.md
 RDMA_CORE_DEPENDENCIES = libnl
 RDMA_CORE_INSTALL_STAGING = YES
+RDMA_CORE_PROVIDES = rdma-core-virtual
 
 RDMA_CORE_CONF_OPTS = \
 	-DNO_MAN_PAGES=1 \

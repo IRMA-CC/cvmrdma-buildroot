@@ -1,0 +1,3 @@
+source "package/cvmrdma/rdma-core/Config.in"
+source "package/cvmrdma/rdma-core-cvmrdma/Config.in"
+source "package/cvmrdma/rdma-core-virtual/Config.in"

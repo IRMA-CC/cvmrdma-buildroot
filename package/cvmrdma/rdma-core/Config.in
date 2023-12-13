@@ -1,0 +1,18 @@
+
+config BR2_PACKAGE_RDMA_CORE
+	bool "rdma-core"
+	depends on BR2_USE_MMU # fork() used in rstream example
+	depends on BR2_TOOLCHAIN_HAS_SYNC_4
+	depends on BR2_TOOLCHAIN_HEADERS_AT_LEAST_3_4  # iproute2
+	depends on !BR2_STATIC_LIBS # dlopen()
+	depends on BR2_TOOLCHAIN_HAS_THREADS_NPTL
+	select BR2_PACKAGE_IPROUTE2  # runtime
+	select BR2_PACKAGE_LIBNL
+	select BR2_PACKAGE_HAS_RDMA_CORE_VIRTUAL # mark as available
+	help
+	  The vanilla RDMA core provider.
+
+if BR2_PACKAGE_RDMA_CORE
+config BR2_PACKAGE_PROVIDES_RDMA_CORE_VIRTUAL
+    default "rdma-core"
+endif
