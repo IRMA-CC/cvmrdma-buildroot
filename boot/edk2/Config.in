@@ -18,6 +18,13 @@ config BR2_TARGET_EDK2
 
 if BR2_TARGET_EDK2
 
+config BR2_EDK2_AMD_SEV_SNP
+	bool "SEV-SNP"
+	help
+	  Use the EDK2 fork from AMD for SEV-SNP platforms.
+
+
+
 choice
 	prompt "Platform"
 	default BR2_TARGET_EDK2_PLATFORM_OVMF_I386 if BR2_i386

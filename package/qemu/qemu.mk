@@ -6,9 +6,18 @@
 
 # When updating the version, check whether the list of supported targets
 # needs to be updated.
+
+ifeq ($(BR2_QEMU_AMD_SEV_SNP),n)
 QEMU_VERSION = 8.1.1
 QEMU_SOURCE = qemu-$(QEMU_VERSION).tar.xz
 QEMU_SITE = https://download.qemu.org
+else
+QEMU_VERSION = fe4c9e8e7e7ddac4b19c4366c1f105ffc4a78482
+QEMU_SITE = https://github.com/AMDESE/qemu.git
+QEMU_SITE_METHOD = git
+QEMU_GIT_SUBMODULES = YES
+endif
+
 QEMU_SELINUX_MODULES = qemu virt
 QEMU_LICENSE = GPL-2.0, LGPL-2.1, MIT, BSD-3-Clause, BSD-2-Clause, Others/BSD-1c
 QEMU_LICENSE_FILES = COPYING COPYING.LIB
@@ -248,12 +257,6 @@ else
 QEMU_OPTS += --disable-numa
 endif
 
-ifeq ($(BR2_PACKAGE_PIPEWIRE),y)
-QEMU_OPTS += --enable-pipewire
-QEMU_DEPENDENCIES += pipewire
-else
-QEMU_OPTS += --disable-pipewire
-endif
 
 ifeq ($(BR2_PACKAGE_SPICE),y)
 QEMU_OPTS += --enable-spice
@@ -498,7 +501,6 @@ define HOST_QEMU_CONFIGURE_CMDS
 		--disable-netmap \
 		--disable-oss \
 		--disable-pa \
-		--disable-pipewire \
 		--disable-sdl \
 		--disable-selinux \
 		--disable-vde \

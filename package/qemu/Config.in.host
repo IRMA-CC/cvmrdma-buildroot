@@ -57,6 +57,12 @@ config BR2_PACKAGE_HOST_QEMU
 
 if BR2_PACKAGE_HOST_QEMU
 
+config BR2_QEMU_AMD_SEV_SNP
+	bool "SEV-SNP"
+	help
+	  Use the QEMU fork from AMD for SEV-SNP platforms.
+
+
 comment "Emulators selection"
 
 config BR2_PACKAGE_HOST_QEMU_SYSTEM_MODE

@@ -4,9 +4,17 @@
 #
 ################################################################################
 
+
+ifeq ($(BR2_EDK2_AMD_SEV_SNP),n)
 EDK2_VERSION = edk2-stable202308
 EDK2_SITE = https://github.com/tianocore/edk2
 EDK2_SITE_METHOD = git
+else
+EDK2_VERSION = 09fbe92dc545779671d7fd89a5bd4f1b14f7e69b
+EDK2_SITE = https://github.com/AMDESE/ovmf.git
+EDK2_SITE_METHOD = git
+endif
+
 EDK2_LICENSE = BSD-2-Clause-Patent
 EDK2_LICENSE_FILES = License.txt
 EDK2_CPE_ID_VENDOR = tianocore
