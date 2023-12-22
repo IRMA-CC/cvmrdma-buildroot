@@ -12,7 +12,7 @@ QEMU_VERSION = 8.1.1
 QEMU_SOURCE = qemu-$(QEMU_VERSION).tar.xz
 QEMU_SITE = https://download.qemu.org
 else
-QEMU_VERSION = fe4c9e8e7e7ddac4b19c4366c1f105ffc4a78482
+QEMU_VERSION = 94bec6ae7a81872ca0df2655dac18b2dea8c3090
 QEMU_SITE = https://github.com/AMDESE/qemu.git
 QEMU_SITE_METHOD = git
 QEMU_GIT_SUBMODULES = YES
