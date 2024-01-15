@@ -1,0 +1,8 @@
+
+config BR2_PACKAGE_UCX
+    bool "ucx"
+    depends on BR2_PACKAGE_HAS_RDMA_CORE_VIRTUAL
+    help
+        Unified Communication X (UCX) is an award winning,
+        optimized production proven-communication framework
+        for modern, high-bandwidth and low-latency networks.
