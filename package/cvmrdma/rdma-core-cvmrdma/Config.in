@@ -8,6 +8,7 @@ config BR2_PACKAGE_RDMA_CORE_CVMRDMA
 	depends on BR2_TOOLCHAIN_HAS_THREADS_NPTL
 	select BR2_PACKAGE_IPROUTE2  # runtime
 	select BR2_PACKAGE_LIBNL
+    select BR2_PACKAGE_LIBSODIUM
 	select BR2_PACKAGE_HAS_RDMA_CORE_VIRTUAL # mark as available
 	help
 	  The CVM-aware RDMA core provider.
