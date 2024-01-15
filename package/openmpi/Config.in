@@ -16,6 +16,7 @@ config BR2_PACKAGE_OPENMPI
 	# from the configure script: "Sparc v8 target is not supported
 	# in this release of Open MPI"
 	depends on !BR2_sparc
+	select BR2_PACKAGE_UCX
 	help
 	  A High Performance Message Passing Library.
 

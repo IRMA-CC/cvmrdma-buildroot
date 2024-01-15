@@ -11,6 +11,7 @@ OPENMPI_SOURCE = openmpi-$(OPENMPI_VERSION).tar.bz2
 OPENMPI_LICENSE = BSD-3-Clause
 OPENMPI_LICENSE_FILES = LICENSE
 OPENMPI_INSTALL_STAGING = YES
+OPENMPI_DEPENDENCIES = ucx
 
 # The macro searching for IME (Infinite Memory Engine) filesystem
 # brings "-I/usr/local/include" in the CPPFLAGS, even if not
@@ -43,6 +44,8 @@ OPENMPI_CONF_OPTS += \
 else
 OPENMPI_CONF_OPTS += --enable-mpi-fortran=no
 endif
+
+OPENMPI_CONF_OPTS += --with-verbs=$(STAGING_DIR)/usr/
 
 OPENMPI_CFLAGS = $(TARGET_CFLAGS)
 
