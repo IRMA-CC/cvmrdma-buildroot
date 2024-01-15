@@ -1,0 +1,6 @@
+
+config BR2_PACKAGE_OPENSM
+    bool "opensm"
+    depends on BR2_PACKAGE_HAS_RDMA_CORE_VIRTUAL
+    help
+        OpenSM Infiniband manager.

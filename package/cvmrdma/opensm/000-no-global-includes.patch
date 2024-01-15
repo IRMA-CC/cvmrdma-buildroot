@@ -1,0 +1,27 @@
+
+diff --git a/config/osmvsel.m4 b/config/osmvsel.m4
+index 87e1d74..1a85e02 100644
+--- a/config/osmvsel.m4
++++ b/config/osmvsel.m4
+@@ -64,8 +64,8 @@ with_sim="/usr")
+ dnl based on the with_osmv we can try the vendor flag
+ if test $with_osmv = "openib"; then
+    AC_DEFINE(OSM_VENDOR_INTF_OPENIB, 1, [Define as 1 for OpenIB vendor])
+-   OSMV_INCLUDES="-I\$(srcdir)/../include -I\$(srcdir)/../../libibumad/include -I\$(includedir)"
+-   OSMV_LDADD="-L\$(abs_srcdir)/../../libibumad/.libs -L\$(libdir) -libumad"
++   OSMV_INCLUDES="-I\$(srcdir)/../include -I\$(srcdir)/../../libibumad/include"
++   OSMV_LDADD="-L\$(abs_srcdir)/../../libibumad/.libs -libumad"
+ 
+    if test "x$with_umad_libs" != "x"; then
+       OSMV_LDADD="-L$with_umad_libs $OSMV_LDADD"
+@@ -111,8 +111,8 @@ elif test $with_osmv = "gen1"; then
+    OSMV_LDADD="-L/usr/local/ibgd/driver/infinihost/lib -lvapi -lmosal -lmtl_common -lmpga"
+ elif test $with_osmv = "vapi"; then
+    AC_DEFINE(OSM_VENDOR_INTF_MTL, 1, [Define as 1 for vapi vendor])
+-   OSMV_INCLUDES="-I/usr/mellanox/include -I/usr/include -I\$(srcdir)/../include"
+-   OSMV_LDADD="-L/usr/lib -L/usr/mellanox/lib -lib_mgt -lvapi -lmosal -lmtl_common -lmpga"
++   OSMV_INCLUDES="-I\$(srcdir)/../include"
++   OSMV_LDADD="-lib_mgt -lvapi -lmosal -lmtl_common -lmpga"
+ else
+    AC_MSG_ERROR([Invalid Vendor Type provided:$with_osmv should be either openib,sim,gen1])
+ fi
