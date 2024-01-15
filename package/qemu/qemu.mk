@@ -511,6 +511,7 @@ define HOST_QEMU_CONFIGURE_CMDS
 		--enable-slirp \
 		--enable-tools \
 		--disable-guest-agent \
+		--disable-rdma \
 		$(HOST_QEMU_OPTS)
 endef
 
