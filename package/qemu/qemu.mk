@@ -12,7 +12,7 @@ QEMU_VERSION = 8.1.1
 QEMU_SOURCE = qemu-$(QEMU_VERSION).tar.xz
 QEMU_SITE = https://download.qemu.org
 else
-QEMU_VERSION = c139a28810964fe90804421561fb6fb0ab2c5056 # HEAD of snp-latest
+QEMU_VERSION = a4f571b72e036d7a2936e2a14bbb19e822b22c8d # HEAD of snp-latest
 QEMU_SITE = https://github.com/AMDESE/qemu.git
 QEMU_SITE_METHOD = git
 QEMU_GIT_SUBMODULES = YES
