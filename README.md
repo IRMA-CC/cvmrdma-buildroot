@@ -8,6 +8,7 @@ A new config:
   + with modified SEV-SNP Linux kernel, with Kconfig:
     * RDMA enabled (userspace access)
     * Mellanox IB kernel modules
+    * Intel NIC kernel module (ixgbe)
     * DMA-BUF system heap enabled (to allocate in unprotected memory)
   + with CVMRDMA
 
