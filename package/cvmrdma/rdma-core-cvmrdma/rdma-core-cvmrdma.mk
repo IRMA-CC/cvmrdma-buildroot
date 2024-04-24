@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-RDMA_CORE_CVMRDMA_VERSION = 21b88638f0bf34bfcd7c3478fad7a1d36d2cff59
+RDMA_CORE_CVMRDMA_VERSION = 2fa99985d337e35b1255b26b2a490e67d0c6501c
 RDMA_CORE_CVMRDMA_SITE = https://github.com/IRMA-CC/cvmrdma-rdma-core.git
 RDMA_CORE_CVMRDMA_LICENSE = GPL-2.0 or BSD-2-Clause
 RDMA_CORE_CVMRDMA_LICENSE_FILES = COPYING.GPL2 COPYING.BSD_MIT COPYING.md
