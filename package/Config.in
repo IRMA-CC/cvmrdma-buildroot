@@ -1525,6 +1525,7 @@ menu "Compression and decompression"
 endmenu
 
 menu "Crypto"
+	source "package/aegis/Config.in"
 	source "package/bearssl/Config.in"
 	source "package/beecrypt/Config.in"
 	source "package/botan/Config.in"

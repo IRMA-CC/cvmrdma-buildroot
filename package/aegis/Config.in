@@ -1,0 +1,5 @@
+
+config BR2_PACKAGE_AEGIS
+    bool "aegis"
+    help
+        https://github.com/jedisct1/libaegis
