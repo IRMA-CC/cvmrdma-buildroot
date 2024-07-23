@@ -1,0 +1,5 @@
+
+config BR2_PACKAGE_RDMA_CORE_CVMRDMA_SRC
+	bool "rdma-core-cvmrdma-src"
+	help
+	  The CVM-aware RDMA core provider.
