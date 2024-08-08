@@ -1,0 +1,5 @@
+config BR2_PACKAGE_RDMA_REDIS
+    bool "rdma-redis"
+    depends on BR2_PACKAGE_HAS_RDMA_CORE_VIRTUAL
+    help
+        https://github.com/zzaoen/RdmaAcceleratingRedis
