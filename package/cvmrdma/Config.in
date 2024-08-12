@@ -1,3 +1,4 @@
+source "package/cvmrdma/mstflint/Config.in"
 source "package/cvmrdma/opensm/Config.in"
 source "package/cvmrdma/rdma-core/Config.in"
 source "package/cvmrdma/rdma-core-cvmrdma/Config.in"
