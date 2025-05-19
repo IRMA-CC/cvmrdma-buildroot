@@ -430,7 +430,7 @@ HOST_QEMU_CFLAGS = $(HOST_CFLAGS)
 
 ifeq ($(BR2_PACKAGE_HOST_QEMU_SYSTEM_MODE),y)
 HOST_QEMU_TARGETS += $(HOST_QEMU_SYS_ARCH)-softmmu
-HOST_QEMU_OPTS += --enable-system --enable-fdt
+HOST_QEMU_OPTS += --enable-system --enable-fdt --enable-slirp --enable-user
 HOST_QEMU_CFLAGS += -I$(HOST_DIR)/include/libfdt
 HOST_QEMU_DEPENDENCIES += host-dtc
 else
