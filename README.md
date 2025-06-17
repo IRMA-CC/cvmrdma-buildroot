@@ -33,23 +33,23 @@ Manually:
 
 ```
 # This assumes that a toolchain is already available at
-# ${HOME}/cvmrdma-install/toolchain-x86-64-v3
+# ${HOME}/leo-cvmrdma-install/toolchain-x86-64-v3
 # deploy.py can do this for you!
 
 # Prepare the Buildroot environment
 # Debug options are disabled by default
-make O=$HOME/cvmrdma-install/br-sev-Release cvmrdma_sev_defconfig
+make O=$HOME/leo-cvmrdma-install/br-sev-Release cvmrdma_sev_defconfig
 
 # (optional) Change configuration options, e.g. enable
 # debug symbols/assertions
-cd $HOME/cvmrdma-install/br-sev-Release
+cd $HOME/leo-cvmrdma-install/br-sev-Release
 make menuconfig
 
 # Build the outputs
 make
 ```
 
-Else, after using deploy.py, you can directly go to `$HOME/cvmrdma-install/br-sev-Release` (or `br-sev-Debug`)
+Else, after using deploy.py, you can directly go to `$HOME/leo-cvmrdma-install/br-sev-Release` (or `br-sev-Debug`)
 configure with `make menuconfig` and rebuild specific packages:
 
 ```
