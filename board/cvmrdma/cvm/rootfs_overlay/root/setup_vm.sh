@@ -87,7 +87,7 @@ wg pubkey < $HOME/privkey.key
 
 # Setup WireGuard interface wg0
 ip link add dev wg0 type wireguard
-ip link set dev wg0 mtu 8920
+ip link set dev wg0 mtu 9710
 ip addr add 10.0.0.${vm_id}/24 dev wg0
 ip link set up dev wg0
 wg set wg0 private-key $HOME/privkey.key listen-port 51820
