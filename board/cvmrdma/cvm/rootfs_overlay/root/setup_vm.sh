@@ -64,7 +64,7 @@ ip addr add 10.0.2.15/24 dev eth0
 ip route add default via 10.0.2.2 
 echo "nameserver 10.0.2.3" > /etc/resolv.conf
 
-modprobe ixgbe
+#modprobe ixgbe
 # we need to use a specific driver for VFs
 modprobe ixgbevf
 ip addr add 192.10.0.${vm_id}/24 dev eth1
@@ -76,7 +76,7 @@ modprobe ib_ipoib
 ip addr add 10.1.1.${vm_id}/24 dev ib0
 ip link set up ib0
 echo connected > /sys/class/net/ib0/mode
-echo 65520 > /sys/class/net/ib0/mtu
+echo 65400 > /sys/class/net/ib0/mtu
 
 # Get the private key from file based on VM ID
 MY_PRIVKEY=$(get_key "$vm_id" "priv")
@@ -87,7 +87,7 @@ wg pubkey < $HOME/privkey.key
 
 # Setup WireGuard interface wg0
 ip link add dev wg0 type wireguard
-ip link set dev wg0 mtu 9710
+ip link set dev wg0 mtu 9600
 ip addr add 10.0.0.${vm_id}/24 dev wg0
 ip link set up dev wg0
 wg set wg0 private-key $HOME/privkey.key listen-port 51820
@@ -104,6 +104,7 @@ done
 
 # Setup WireGuard interface wg1
 ip link add dev wg1 type wireguard
+ip link set dev wg1 mtu 65000
 ip addr add 10.0.3.${vm_id}/24 dev wg1
 ip link set dev wg1 up
 wg set wg1 private-key $HOME/privkey.key listen-port 51821
@@ -118,8 +119,18 @@ for peer_vm in "${peer_vms[@]}"; do
     fi
 done
 
+
 export CVMRDMA_BIND_ADDR="*:3456"
 export CVMRDMA_AEAD="aegis128x4"
 export CVMRDMA_SHARED_KEY="2dcfa4058886bc0d5f9bfaded6c4b9767da3841ca83ee46f16a616aa5cd9494d"
+
+# backwards compatibility
+if [[ $vm_id -eq 3 ]]; then
+    export CVMRDMA_REMOTE_ADDR="10.0.0.4:3456"
+fi 
+
+if [[ $vm_id -eq 4 ]]; then
+    export CVMRDMA_REMOTE_ADDR="10.0.0.3:3456"
+fi 
 
 #opensm &
