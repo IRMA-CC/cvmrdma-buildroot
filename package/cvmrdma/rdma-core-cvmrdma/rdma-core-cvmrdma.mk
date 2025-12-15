@@ -17,6 +17,12 @@ RDMA_CORE_CVMRDMA_CONF_OPTS = \
 	-DNO_PYVERBS=1 \
 	-DIOCTL_MODE=ioctl
 
+# add this to RDMA_CORE_CVMRDMA_CONF_OPTS to enable debugging. 
+# Make sure to set IBTEST_DEBUG_PRINTS in debug.h to 0 if you do not want DEBUG prints.
+# -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+# -DCMAKE_C_FLAGS_RELWITHDEBINFO="-O2 -g3" \
+# -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O2 -g3"
+
 ifeq ($(BR2_TOOLCHAIN_HAS_LIBATOMIC),y)
 RDMA_CORE_CVMRDMA_CONF_OPTS += \
 	-DCMAKE_EXE_LINKER_FLAGS=-latomic \

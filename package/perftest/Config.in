@@ -26,7 +26,7 @@ config BR2_PACKAGE_PERFTEST
 	# musl does not define sysconf(_SC_LEVEL1_DCACHE_LINESIZE)
 	depends on !BR2_TOOLCHAIN_USES_MUSL
 	select BR2_PACKAGE_PCIUTILS
-	select BR2_PACKAGE_RDMA_CORE
+	select BR2_PACKAGE_RDMA_CORE_VIRTUAL
 	help
 	  Open Fabrics Performance Tests.
 

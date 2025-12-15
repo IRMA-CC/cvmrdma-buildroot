@@ -1,0 +1,5 @@
+config BR2_PACKAGE_CVMRDMA_MANAGER
+    bool "rdma-bench"
+    depends on BR2_PACKAGE_HAS_RDMA_CORE_VIRTUAL
+    help
+        A simple RDMA manager app.

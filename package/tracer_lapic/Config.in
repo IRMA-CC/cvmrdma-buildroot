@@ -1,0 +1,4 @@
+config BR2_PACKAGE_TRACER_LAPIC
+    bool "lapic_trace kernel module"
+    help
+      Kernel module to trace LAPIC writes using kprobes.

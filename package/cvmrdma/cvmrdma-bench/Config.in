@@ -1,0 +1,7 @@
+config BR2_PACKAGE_CVMRDMA_BENCH
+    bool "rdma-bench"
+    depends on BR2_PACKAGE_HAS_RDMA_CORE_VIRTUAL
+    select BR2_PACKAGE_LIBSODIUM
+    select BR2_PACKAGE_AEGIS
+    help
+        A simple RDMA test app.
