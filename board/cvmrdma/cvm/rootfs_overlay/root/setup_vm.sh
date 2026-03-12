@@ -78,8 +78,8 @@ ip link set dev eth2 mtu 9710
 modprobe ib_ipoib
 ip addr add 10.1.1.${vm_id}/24 dev ib0
 ip link set up ib0
-echo connected > /sys/class/net/ib0/mode
-echo 65400 > /sys/class/net/ib0/mtu
+# echo connected > /sys/class/net/ib0/mode
+# echo 65400 > /sys/class/net/ib0/mtu
 
 # Get the private key from file based on VM ID
 MY_PRIVKEY=$(get_key "$vm_id" "priv")
