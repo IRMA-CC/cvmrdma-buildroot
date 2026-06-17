@@ -4,8 +4,9 @@
 #
 ################################################################################
 
-RDMA_CORE_CVMRDMA_SRC_VERSION = a7f4aea75c92f1dee2c1ceffa371700728b1744c
+RDMA_CORE_CVMRDMA_SRC_VERSION = main
 RDMA_CORE_CVMRDMA_SRC_SITE = https://github.com/IRMA-CC/cvmrdma-rdma-core.git
+RDMA_CORE_CVMRDMA_SRC_SITE_METHOD = git
 RDMA_CORE_CVMRDMA_SRC_LICENSE = GPL-2.0 or BSD-2-Clause
 RDMA_CORE_CVMRDMA_SRC_INSTALL_STAGING = YES
 
